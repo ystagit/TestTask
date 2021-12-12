@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Scenes>
+     <Scene name="Main" title="Main">
+          <TabContext value="0">
+               <TabList>
+                    <Tab value="0">
+                         <Text>Texts</Text>
+                    </Tab>
+                    <Tab value="1">
+                         <Text>Images</Text>
+                    </Tab>
+                    <Tab value="2">>
+                         <Text>Messages</Text>
+                    </Tab>
+               </TabList>
+               <TabPanel value="0">
+                    <Grid xs="12" ys="12">
+                         <Grid xs="6" ys="3">
+                              <Text>ffgsdfhgisdfgdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhfdhdfgh</Text>
+                         </Grid>
+                         <Grid xs="6" ys="5">
+                              <Text>
+                                   - Line 0
+                                   - Line 1
+                                   - Line 2
+                                   - Line 3
+                                   - Line 4
+                                   - Line 5
+                                   - Line 6
+                                   - Line 7
+                                   - Line 8
+                                   - Line 9
+                              </Text>
+                         </Grid>
+                    </Grid>
+               </TabPanel>
+               <TabPanel value="1">
+                    <Grid xs="12" ys="12">
+                         <Grid xs="6" ys="6">
+                              <ImgButton src="images/testImg_1.jpg" />
+                         </Grid>
+                         <Grid xs="6" ys="6">
+                              <ImgButton src="images/testImg_2.jpg" />
+                         </Grid>
+                         <Grid xs="6" ys="6">
+                              <ImgButton src="images/testImg_3.jpg" />
+                         </Grid>
+                         <Grid xs="6" ys="6">
+                              <ImgButton src="images/testImg_4.jpg" />
+                         </Grid>
+                    </Grid>
+               </TabPanel>
+               <TabPanel value="2">
+                    <Grid xs="12" ys="12">
+                         <Grid xs="6" ys="6">
+                              <Button title="Error message!" />
+                         </Grid>
+                         <Grid xs="6" ys="6">
+                              <Button title="Warning message!" />
+                         </Grid>
+                         <Grid xs="6" ys="6">
+                              <Button title="Info message!" />
+                         </Grid>
+                         <Grid xs="6" ys="6">
+                              <Button title="Success message!" />
+                         </Grid>
+                    </Grid>
+               </TabPanel>
+          </TabContext>
+     </Scene>
+     <Modal>
+          <!--It's body of modal-->
+          <Image src="images/noImage.png" />
+     </Modal>
+</Scenes>

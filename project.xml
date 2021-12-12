@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="TestTask" package="com.sample.testtask" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="TestTask" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	
+	<assets path="Assets" rename="assets" />
+	<assets path="Assets/fonts" rename="fonts" if="html5" /> 
+	<assets path="Assets/images" rename="images"/>
+	
+</project>
