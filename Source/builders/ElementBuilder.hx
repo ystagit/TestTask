@@ -46,11 +46,21 @@ class ElementBuilder {
                             .withBackground(Color.LIGHT)
                             .apply(parentView);
             case ElementType.TAB_CONTEXT:
-                return addTabContext(parentView, node);
+                return TabContextBuilder.build(node)
+                            .withBackground(Color.BLACK)
+                            .apply(parentView);
             case ElementType.TAB_PANEL:
-                return addTabPanel(parentView, node);
+                return TabPanelBuilder.build(node)
+                            .withPosition(0, "10%")
+                            .withSize("100%", "90%")
+                            .withBackground(Color.LIGHT)
+                            .apply(parentView);
             case ElementType.TAB_LIST:
-                return addTabList(parentView, node);
+                return TabListBuilder.build(node)
+                            .withCountTab(getElementCount(node, "Tab"))
+                            .withBackground(Color.LIGHT)
+                            .withSize("100%", "10%")
+                            .apply(parentView);
             case ElementType.TAB:
                 return addTab(parentView, node);
             case ElementType.TEXT:
@@ -118,36 +128,10 @@ class ElementBuilder {
         var tabContext:TabContext = new TabContext();
         setMaxSize(parentView.getModel(), tabContext);
         tabContext.value = node.att.value;
-        tabContext.setSize("100%", "100%");
         tabContext.setBGColor(Color.BLACK);
         var tabContextView:TabContextView = new TabContextView(tabContext);
         parentView.add(ElementType.TAB_CONTEXT, tabContextView);
         return tabContextView;
-    }
-
-    public static function addTabList(parentView:GuiView, node:Access):GuiView {
-        var tabList:TabList = new TabList();
-        // Needs to know tabs count to build Tab element
-        tabList.count = getElementCount(node, "Tab");
-        setMaxSize(parentView.getModel(), tabList);
-        tabList.setSize("100%", "10%");
-        tabList.setBGColor(Color.LIGHT);
-        var tabListController:TabListController = new TabListController(tabList);
-        var tabListView:TabListView = new TabListView(tabList, tabListController);
-        parentView.add(ElementType.TAB_LIST, tabListView);
-        return tabListView;
-    }
-
-    public static function addTabPanel(parentView:GuiView, node:Access):GuiView {
-        var tabPanel:TabPanel = new TabPanel();
-        setMaxSize(parentView.getModel(), tabPanel);
-        tabPanel.value = node.att.value;
-        tabPanel.setPosition(0, "10%");
-        tabPanel.setSize("100%", "90%");
-        tabPanel.setBGColor(Color.LIGHT);
-        var tabPanelView:TabPanelView = new TabPanelView(tabPanel);
-        parentView.add(ElementType.TAB_PANEL, tabPanelView);
-        return tabPanelView;
     }
 
     public static function addTab(parentView:GuiView, node:Access):GuiView {

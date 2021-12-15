@@ -1,5 +1,6 @@
 package elements.tabs.panel;
 
+import models.ModelEvent;
 import elements.tabs.context.TabContext;
 import elements.tabs.context.TabContextView;
 import openfl.events.Event;
@@ -12,10 +13,23 @@ class TabPanelView extends GuiView {
     }
 
     public override function initAfterSettingPartner() {
-        change();
+        super.initAfterSettingPartner();
+        checkVisibility();
+    }
+
+    public override function show(e:ModelEvent = null):Void {
+        checkVisibility();
+    }
+
+    public override function hide(e:Event = null):Void {
+        checkVisibility();
     }
 
     public override function change(e:Event = null):Void {
+        checkVisibility();
+    }
+
+    private function checkVisibility() {
         if (Std.isOfType(getParent(), TabContextView)) {
             var view:TabContextView = cast(getParent(), TabContextView);
             var tabContext:TabContext = cast(view.getModel(), TabContext);
@@ -23,10 +37,10 @@ class TabPanelView extends GuiView {
 
             if (tabContext.visible && tabContext.value == tabPanel.value) {
                 trace("Show <TabPanel value='" + tabPanel.value + "' >");
-                show();
+                super.show();
             } else if (tabPanel.visible) {
                 trace("Hide <TabPanel value='" + tabPanel.value + "' >");
-                hide();
+                super.hide();
             }
         }
     }

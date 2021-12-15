@@ -82,12 +82,6 @@ class HXCPP_CLASS_ATTRIBUTES ElementBuilder_obj : public ::hx::Object
 		static  ::views::GuiView addTabContext( ::views::GuiView parentView, ::Xml node);
 		static ::Dynamic addTabContext_dyn();
 
-		static  ::views::GuiView addTabList( ::views::GuiView parentView, ::Xml node);
-		static ::Dynamic addTabList_dyn();
-
-		static  ::views::GuiView addTabPanel( ::views::GuiView parentView, ::Xml node);
-		static ::Dynamic addTabPanel_dyn();
-
 		static  ::views::GuiView addTab( ::views::GuiView parentView, ::Xml node);
 		static ::Dynamic addTab_dyn();
 

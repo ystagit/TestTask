@@ -24,9 +24,6 @@
 #ifndef INCLUDED_haxe_Exception
 #include <haxe/Exception.h>
 #endif
-#ifndef INCLUDED_haxe_Log
-#include <haxe/Log.h>
-#endif
 #ifndef INCLUDED_haxe_xml__Access_AttribAccess_Impl_
 #include <haxe/xml/_Access/AttribAccess_Impl_.h>
 #endif
@@ -81,9 +78,9 @@
 
 HX_DEFINE_STACK_FRAME(_hx_pos_04545888ab04dc37_19_new,"builders.SceneBuilder","new",0x77b133f7,"builders.SceneBuilder.new","builders/SceneBuilder.hx",19,0xb0c3e078)
 HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_26_validateRequiredAttrs,"builders.SceneBuilder","validateRequiredAttrs",0x124a6324,"builders.SceneBuilder.validateRequiredAttrs","builders/SceneBuilder.hx",26,0xb0c3e078)
-HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_33_initAttributes,"builders.SceneBuilder","initAttributes",0x474d81d0,"builders.SceneBuilder.initAttributes","builders/SceneBuilder.hx",33,0xb0c3e078)
-HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_36_withBackground,"builders.SceneBuilder","withBackground",0xe77e375d,"builders.SceneBuilder.withBackground","builders/SceneBuilder.hx",36,0xb0c3e078)
-HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_42_apply,"builders.SceneBuilder","apply",0x386a3cc5,"builders.SceneBuilder.apply","builders/SceneBuilder.hx",42,0xb0c3e078)
+HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_32_initAttributes,"builders.SceneBuilder","initAttributes",0x474d81d0,"builders.SceneBuilder.initAttributes","builders/SceneBuilder.hx",32,0xb0c3e078)
+HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_35_withBackground,"builders.SceneBuilder","withBackground",0xe77e375d,"builders.SceneBuilder.withBackground","builders/SceneBuilder.hx",35,0xb0c3e078)
+HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_40_apply,"builders.SceneBuilder","apply",0x386a3cc5,"builders.SceneBuilder.apply","builders/SceneBuilder.hx",40,0xb0c3e078)
 HX_LOCAL_STACK_FRAME(_hx_pos_04545888ab04dc37_16_build,"builders.SceneBuilder","build",0xcf199285,"builders.SceneBuilder.build","builders/SceneBuilder.hx",16,0xb0c3e078)
 namespace builders{
 
@@ -116,42 +113,39 @@ bool SceneBuilder_obj::_hx_isInstanceOf(int inClassId) {
 void SceneBuilder_obj::validateRequiredAttrs(){
             	HX_GC_STACKFRAME(&_hx_pos_04545888ab04dc37_26_validateRequiredAttrs)
 HXDLIN(  26)		if (!(::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(this->get_node(),HX_("name",4b,72,ff,48)))) {
-HXLINE(  27)			::haxe::Log_obj::trace(HX_("T_0",45,10,40,00),::hx::SourceInfo(HX_("Source/builders/SceneBuilder.hx",4c,f3,cc,b5),27,HX_("builders.SceneBuilder",85,6c,04,2c),HX_("validateRequiredAttrs",cd,4d,21,76)));
-HXLINE(  28)			HX_STACK_DO_THROW(::haxe::Exception_obj::thrown( ::openfl::errors::IllegalOperationError_obj::__alloc( HX_CTX ,HX_("No 'name' attribute",d0,f0,89,4b))));
+HXLINE(  27)			HX_STACK_DO_THROW(::haxe::Exception_obj::thrown( ::openfl::errors::IllegalOperationError_obj::__alloc( HX_CTX ,HX_("No 'name' attribute",d0,f0,89,4b))));
             		}
             	}
 
 
 void SceneBuilder_obj::initAttributes(){
-            	HX_STACKFRAME(&_hx_pos_04545888ab04dc37_33_initAttributes)
-HXDLIN(  33)		 ::elements::scene::Scene _hx_tmp = this->scene;
-HXDLIN(  33)		::String _hx_tmp1;
-HXDLIN(  33)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(this->get_node(),HX_("title",98,15,3b,10))) {
-HXDLIN(  33)			_hx_tmp1 = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(this->get_node(),HX_("title",98,15,3b,10));
+            	HX_STACKFRAME(&_hx_pos_04545888ab04dc37_32_initAttributes)
+HXDLIN(  32)		 ::elements::scene::Scene _hx_tmp = this->scene;
+HXDLIN(  32)		::String _hx_tmp1;
+HXDLIN(  32)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(this->get_node(),HX_("title",98,15,3b,10))) {
+HXDLIN(  32)			_hx_tmp1 = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(this->get_node(),HX_("title",98,15,3b,10));
             		}
             		else {
-HXDLIN(  33)			_hx_tmp1 = HX_("No title",99,e4,d3,50);
+HXDLIN(  32)			_hx_tmp1 = HX_("No title",99,e4,d3,50);
             		}
-HXDLIN(  33)		_hx_tmp->set_title(_hx_tmp1);
+HXDLIN(  32)		_hx_tmp->set_title(_hx_tmp1);
             	}
 
 
  ::builders::SceneBuilder SceneBuilder_obj::withBackground( ::shared::Color color){
-            	HX_STACKFRAME(&_hx_pos_04545888ab04dc37_36_withBackground)
-HXLINE(  37)		::haxe::Log_obj::trace(HX_("T_COLOR",d8,e7,3c,69),::hx::SourceInfo(HX_("Source/builders/SceneBuilder.hx",4c,f3,cc,b5),37,HX_("builders.SceneBuilder",85,6c,04,2c),HX_("withBackground",94,11,6d,5c)));
-HXLINE(  38)		this->scene->setBGColor(color);
-HXLINE(  39)		return ::hx::ObjectPtr<OBJ_>(this);
+            	HX_STACKFRAME(&_hx_pos_04545888ab04dc37_35_withBackground)
+HXLINE(  36)		this->scene->setBGColor(color);
+HXLINE(  37)		return ::hx::ObjectPtr<OBJ_>(this);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(SceneBuilder_obj,withBackground,return )
 
  ::elements::scene::SceneView SceneBuilder_obj::apply( ::views::GuiView parentView){
-            	HX_GC_STACKFRAME(&_hx_pos_04545888ab04dc37_42_apply)
-HXLINE(  43)		::haxe::Log_obj::trace(HX_("T_APPLY",e3,fb,1b,43),::hx::SourceInfo(HX_("Source/builders/SceneBuilder.hx",4c,f3,cc,b5),43,HX_("builders.SceneBuilder",85,6c,04,2c),HX_("apply",6e,85,3b,24)));
-HXLINE(  44)		 ::elements::scene::SceneView sceneView =  ::elements::scene::SceneView_obj::__alloc( HX_CTX ,this->scene,null());
-HXLINE(  45)		parentView->add(::elements::ElementType_obj::SCENE,sceneView);
-HXLINE(  46)		return sceneView;
+            	HX_GC_STACKFRAME(&_hx_pos_04545888ab04dc37_40_apply)
+HXLINE(  41)		 ::elements::scene::SceneView sceneView =  ::elements::scene::SceneView_obj::__alloc( HX_CTX ,this->scene,null());
+HXLINE(  42)		parentView->add(::elements::ElementType_obj::SCENE,sceneView);
+HXLINE(  43)		return sceneView;
             	}
 
 

@@ -64,16 +64,19 @@
 #include <views/GuiView.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_44b447b0953112bb_11_new,"elements.tabs.panel.TabPanelView","new",0x8dab9569,"elements.tabs.panel.TabPanelView.new","elements/tabs/panel/TabPanelView.hx",11,0x4ff4fae6)
+HX_DEFINE_STACK_FRAME(_hx_pos_44b447b0953112bb_12_new,"elements.tabs.panel.TabPanelView","new",0x8dab9569,"elements.tabs.panel.TabPanelView.new","elements/tabs/panel/TabPanelView.hx",12,0x4ff4fae6)
 HX_LOCAL_STACK_FRAME(_hx_pos_44b447b0953112bb_15_initAfterSettingPartner,"elements.tabs.panel.TabPanelView","initAfterSettingPartner",0x2c08782d,"elements.tabs.panel.TabPanelView.initAfterSettingPartner","elements/tabs/panel/TabPanelView.hx",15,0x4ff4fae6)
-HX_LOCAL_STACK_FRAME(_hx_pos_44b447b0953112bb_19_change,"elements.tabs.panel.TabPanelView","change",0x1776d807,"elements.tabs.panel.TabPanelView.change","elements/tabs/panel/TabPanelView.hx",19,0x4ff4fae6)
+HX_LOCAL_STACK_FRAME(_hx_pos_44b447b0953112bb_21_show,"elements.tabs.panel.TabPanelView","show",0x6bc777d4,"elements.tabs.panel.TabPanelView.show","elements/tabs/panel/TabPanelView.hx",21,0x4ff4fae6)
+HX_LOCAL_STACK_FRAME(_hx_pos_44b447b0953112bb_25_hide,"elements.tabs.panel.TabPanelView","hide",0x6482d799,"elements.tabs.panel.TabPanelView.hide","elements/tabs/panel/TabPanelView.hx",25,0x4ff4fae6)
+HX_LOCAL_STACK_FRAME(_hx_pos_44b447b0953112bb_29_change,"elements.tabs.panel.TabPanelView","change",0x1776d807,"elements.tabs.panel.TabPanelView.change","elements/tabs/panel/TabPanelView.hx",29,0x4ff4fae6)
+HX_LOCAL_STACK_FRAME(_hx_pos_44b447b0953112bb_33_checkVisibility,"elements.tabs.panel.TabPanelView","checkVisibility",0x9496c343,"elements.tabs.panel.TabPanelView.checkVisibility","elements/tabs/panel/TabPanelView.hx",33,0x4ff4fae6)
 namespace elements{
 namespace tabs{
 namespace panel{
 
 void TabPanelView_obj::__construct( ::elements::tabs::panel::TabPanel tabPanel){
-            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_11_new)
-HXDLIN(  11)		super::__construct(tabPanel,null());
+            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_12_new)
+HXDLIN(  12)		super::__construct(tabPanel,null());
             	}
 
 Dynamic TabPanelView_obj::__CreateEmpty() { return new TabPanelView_obj; }
@@ -117,42 +120,63 @@ bool TabPanelView_obj::_hx_isInstanceOf(int inClassId) {
 
 void TabPanelView_obj::initAfterSettingPartner(){
             	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_15_initAfterSettingPartner)
-HXDLIN(  15)		this->change(null());
+HXLINE(  16)		this->super::initAfterSettingPartner();
+HXLINE(  17)		this->checkVisibility();
+            	}
+
+
+void TabPanelView_obj::show( ::models::ModelEvent e){
+            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_21_show)
+HXDLIN(  21)		this->checkVisibility();
+            	}
+
+
+void TabPanelView_obj::hide( ::openfl::events::Event e){
+            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_25_hide)
+HXDLIN(  25)		this->checkVisibility();
             	}
 
 
 void TabPanelView_obj::change( ::models::ModelEvent _tmp_e){
-            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_19_change)
-HXDLIN(  19)		 ::openfl::events::Event e = ( ( ::openfl::events::Event)(_tmp_e) );
-HXDLIN(  19)		if (::Std_obj::isOfType(this->getParent(),::hx::ClassOf< ::elements::tabs::context::TabContextView >())) {
-HXLINE(  20)			 ::elements::tabs::context::TabContextView view = ::hx::TCast<  ::elements::tabs::context::TabContextView >::cast(this->getParent());
-HXLINE(  21)			 ::elements::tabs::context::TabContext tabContext = ::hx::TCast<  ::elements::tabs::context::TabContext >::cast(view->getModel());
-HXLINE(  22)			 ::elements::tabs::panel::TabPanel tabPanel = ::hx::TCast<  ::elements::tabs::panel::TabPanel >::cast(this->model);
-HXLINE(  24)			bool _hx_tmp;
-HXDLIN(  24)			if (tabContext->get_visible()) {
-HXLINE(  24)				::String _hx_tmp1 = tabContext->get_value();
-HXDLIN(  24)				_hx_tmp = (_hx_tmp1 == tabPanel->get_value());
+            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_29_change)
+HXDLIN(  29)		 ::openfl::events::Event e = ( ( ::openfl::events::Event)(_tmp_e) );
+HXDLIN(  29)		this->checkVisibility();
+            	}
+
+
+void TabPanelView_obj::checkVisibility(){
+            	HX_STACKFRAME(&_hx_pos_44b447b0953112bb_33_checkVisibility)
+HXDLIN(  33)		if (::Std_obj::isOfType(this->getParent(),::hx::ClassOf< ::elements::tabs::context::TabContextView >())) {
+HXLINE(  34)			 ::elements::tabs::context::TabContextView view = ::hx::TCast<  ::elements::tabs::context::TabContextView >::cast(this->getParent());
+HXLINE(  35)			 ::elements::tabs::context::TabContext tabContext = ::hx::TCast<  ::elements::tabs::context::TabContext >::cast(view->getModel());
+HXLINE(  36)			 ::elements::tabs::panel::TabPanel tabPanel = ::hx::TCast<  ::elements::tabs::panel::TabPanel >::cast(this->model);
+HXLINE(  38)			bool _hx_tmp;
+HXDLIN(  38)			if (tabContext->get_visible()) {
+HXLINE(  38)				::String _hx_tmp1 = tabContext->get_value();
+HXDLIN(  38)				_hx_tmp = (_hx_tmp1 == tabPanel->get_value());
             			}
             			else {
-HXLINE(  24)				_hx_tmp = false;
+HXLINE(  38)				_hx_tmp = false;
             			}
-HXDLIN(  24)			if (_hx_tmp) {
-HXLINE(  25)				 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
-HXDLIN(  25)				::String _hx_tmp1 = ((HX_("Show <TabPanel value='",e3,76,13,ec) + tabPanel->get_value()) + HX_("' >",05,b4,1d,00));
-HXDLIN(  25)				_hx_tmp(_hx_tmp1,::hx::SourceInfo(HX_("Source/elements/tabs/panel/TabPanelView.hx",92,f0,c7,2d),25,HX_("elements.tabs.panel.TabPanelView",f7,ac,30,f3),HX_("change",70,91,72,b7)));
-HXLINE(  26)				this->show(null());
+HXDLIN(  38)			if (_hx_tmp) {
+HXLINE(  39)				 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
+HXDLIN(  39)				::String _hx_tmp1 = ((HX_("Show <TabPanel value='",e3,76,13,ec) + tabPanel->get_value()) + HX_("' >",05,b4,1d,00));
+HXDLIN(  39)				_hx_tmp(_hx_tmp1,::hx::SourceInfo(HX_("Source/elements/tabs/panel/TabPanelView.hx",92,f0,c7,2d),39,HX_("elements.tabs.panel.TabPanelView",f7,ac,30,f3),HX_("checkVisibility",ba,14,67,4c)));
+HXLINE(  40)				this->super::show(null());
             			}
             			else {
-HXLINE(  27)				if (tabPanel->get_visible()) {
-HXLINE(  28)					 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
-HXDLIN(  28)					::String _hx_tmp1 = ((HX_("Hide <TabPanel value='",e8,2b,23,6d) + tabPanel->get_value()) + HX_("' >",05,b4,1d,00));
-HXDLIN(  28)					_hx_tmp(_hx_tmp1,::hx::SourceInfo(HX_("Source/elements/tabs/panel/TabPanelView.hx",92,f0,c7,2d),28,HX_("elements.tabs.panel.TabPanelView",f7,ac,30,f3),HX_("change",70,91,72,b7)));
-HXLINE(  29)					this->hide(null());
+HXLINE(  41)				if (tabPanel->get_visible()) {
+HXLINE(  42)					 ::Dynamic _hx_tmp = ::haxe::Log_obj::trace;
+HXDLIN(  42)					::String _hx_tmp1 = ((HX_("Hide <TabPanel value='",e8,2b,23,6d) + tabPanel->get_value()) + HX_("' >",05,b4,1d,00));
+HXDLIN(  42)					_hx_tmp(_hx_tmp1,::hx::SourceInfo(HX_("Source/elements/tabs/panel/TabPanelView.hx",92,f0,c7,2d),42,HX_("elements.tabs.panel.TabPanelView",f7,ac,30,f3),HX_("checkVisibility",ba,14,67,4c)));
+HXLINE(  43)					this->super::hide(null());
             				}
             			}
             		}
             	}
 
+
+HX_DEFINE_DYNAMIC_FUNC0(TabPanelView_obj,checkVisibility,(void))
 
 
 ::hx::ObjectPtr< TabPanelView_obj > TabPanelView_obj::__new( ::elements::tabs::panel::TabPanel tabPanel) {
@@ -175,8 +199,15 @@ TabPanelView_obj::TabPanelView_obj()
 ::hx::Val TabPanelView_obj::__Field(const ::String &inName,::hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 4:
+		if (HX_FIELD_EQ(inName,"show") ) { return ::hx::Val( show_dyn() ); }
+		if (HX_FIELD_EQ(inName,"hide") ) { return ::hx::Val( hide_dyn() ); }
+		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"change") ) { return ::hx::Val( change_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"checkVisibility") ) { return ::hx::Val( checkVisibility_dyn() ); }
 		break;
 	case 23:
 		if (HX_FIELD_EQ(inName,"initAfterSettingPartner") ) { return ::hx::Val( initAfterSettingPartner_dyn() ); }
@@ -191,7 +222,10 @@ static ::hx::StaticInfo *TabPanelView_obj_sStaticStorageInfo = 0;
 
 static ::String TabPanelView_obj_sMemberFields[] = {
 	HX_("initAfterSettingPartner",a4,98,49,a4),
+	HX_("show",fd,d4,52,4c),
+	HX_("hide",c2,34,0e,45),
 	HX_("change",70,91,72,b7),
+	HX_("checkVisibility",ba,14,67,4c),
 	::String(null()) };
 
 ::hx::Class TabPanelView_obj::__mClass;

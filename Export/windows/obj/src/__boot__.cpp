@@ -2193,6 +2193,15 @@
 #ifndef INCLUDED_controllers_IController
 #include <controllers/IController.h>
 #endif
+#ifndef INCLUDED_builders_TabPanelBuilder
+#include <builders/TabPanelBuilder.h>
+#endif
+#ifndef INCLUDED_builders_TabListBuilder
+#include <builders/TabListBuilder.h>
+#endif
+#ifndef INCLUDED_builders_TabContextBuilder
+#include <builders/TabContextBuilder.h>
+#endif
 #ifndef INCLUDED_builders_SceneBuilder
 #include <builders/SceneBuilder.h>
 #endif
@@ -3042,6 +3051,9 @@ __files__boot();
 ::controllers::IMouseHandler_obj::__register();
 ::controllers::BaseController_obj::__register();
 ::controllers::IController_obj::__register();
+::builders::TabPanelBuilder_obj::__register();
+::builders::TabListBuilder_obj::__register();
+::builders::TabContextBuilder_obj::__register();
 ::builders::SceneBuilder_obj::__register();
 ::builders::ElementBuilder_obj::__register();
 ::builders::BaseBuilder_obj::__register();

@@ -75,9 +75,9 @@ class HXCPP_CLASS_ATTRIBUTES GuiComposite_obj : public  ::views::GuiComponent_ob
 
 		void hover( ::openfl::events::MouseEvent e);
 
-		void show( ::models::ModelEvent e);
+		virtual void show( ::models::ModelEvent e);
 
-		void hide( ::openfl::events::Event e);
+		virtual void hide( ::openfl::events::Event e);
 
 		void resize( ::models::ModelEvent e);
 

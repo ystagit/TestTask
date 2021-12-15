@@ -60,7 +60,14 @@ class HXCPP_CLASS_ATTRIBUTES TabPanelView_obj : public  ::views::GuiView_obj
 
 		void initAfterSettingPartner();
 
+		void show( ::models::ModelEvent e);
+
+		void hide( ::openfl::events::Event e);
+
 		void change( ::models::ModelEvent _tmp_e);
+
+		void checkVisibility();
+		::Dynamic checkVisibility_dyn();
 
 };
 
