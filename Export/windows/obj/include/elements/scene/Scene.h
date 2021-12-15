@@ -51,8 +51,15 @@ class HXCPP_CLASS_ATTRIBUTES Scene_obj : public  ::models::Model_obj
 		::String __ToString() const { return HX_("Scene",2c,49,ff,0b); }
 
 		::String name;
+		::String title;
 		::String get_name();
 		::Dynamic get_name_dyn();
+
+		::String get_title();
+		::Dynamic get_title_dyn();
+
+		::String set_title(::String title);
+		::Dynamic set_title_dyn();
 
 };
 

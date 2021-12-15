@@ -6191,10 +6191,40 @@
    <depend name="include/openfl/events/Event.h"/>
    <depend name="include/openfl/events/MouseEvent.h"/>
   </file>
+  <file name="src/builders/SceneBuilder.cpp" >
+   <depend name="include/Xml.h"/>
+   <depend name="include/builders/BaseBuilder.h"/>
+   <depend name="include/builders/SceneBuilder.h"/>
+   <depend name="include/controllers/IController.h"/>
+   <depend name="include/elements/ElementType.h"/>
+   <depend name="include/elements/scene/Scene.h"/>
+   <depend name="include/elements/scene/SceneView.h"/>
+   <depend name="include/haxe/Exception.h"/>
+   <depend name="include/haxe/Log.h"/>
+   <depend name="include/haxe/xml/_Access/AttribAccess_Impl_.h"/>
+   <depend name="include/haxe/xml/_Access/HasAttribAccess_Impl_.h"/>
+   <depend name="include/models/IModel.h"/>
+   <depend name="include/models/Model.h"/>
+   <depend name="include/openfl/display/DisplayObject.h"/>
+   <depend name="include/openfl/display/DisplayObjectContainer.h"/>
+   <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/display/InteractiveObject.h"/>
+   <depend name="include/openfl/display/Sprite.h"/>
+   <depend name="include/openfl/errors/Error.h"/>
+   <depend name="include/openfl/errors/IllegalOperationError.h"/>
+   <depend name="include/openfl/events/EventDispatcher.h"/>
+   <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/shared/Color.h"/>
+   <depend name="include/views/GuiComponent.h"/>
+   <depend name="include/views/GuiComposite.h"/>
+   <depend name="include/views/GuiView.h"/>
+  </file>
   <file name="src/builders/ElementBuilder.cpp" >
    <depend name="include/Xml.h"/>
    <depend name="include/_Xml/XmlType_Impl_.h"/>
+   <depend name="include/builders/BaseBuilder.h"/>
    <depend name="include/builders/ElementBuilder.h"/>
+   <depend name="include/builders/SceneBuilder.h"/>
    <depend name="include/controllers/BaseController.h"/>
    <depend name="include/controllers/IController.h"/>
    <depend name="include/elements/ElementType.h"/>
@@ -6212,7 +6242,6 @@
    <depend name="include/elements/modal/ModalView.h"/>
    <depend name="include/elements/row/Row.h"/>
    <depend name="include/elements/row/RowView.h"/>
-   <depend name="include/elements/scene/Scene.h"/>
    <depend name="include/elements/scene/SceneView.h"/>
    <depend name="include/elements/tabs/TabList.h"/>
    <depend name="include/elements/tabs/TabListController.h"/>
@@ -6244,6 +6273,10 @@
    <depend name="include/views/GuiComponent.h"/>
    <depend name="include/views/GuiComposite.h"/>
    <depend name="include/views/GuiView.h"/>
+  </file>
+  <file name="src/builders/BaseBuilder.cpp" >
+   <depend name="include/Xml.h"/>
+   <depend name="include/builders/BaseBuilder.h"/>
   </file>
   <file name="src/builders/AppBuilder.cpp" >
    <depend name="include/Xml.h"/>

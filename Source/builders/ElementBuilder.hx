@@ -42,7 +42,9 @@ class ElementBuilder {
             case ElementType.MODAL:
                 return addModal(parentView, node);
             case ElementType.SCENE:
-                return addScene(parentView, node);
+                return SceneBuilder.build(node)
+                            .withBackground(Color.LIGHT)
+                            .apply(parentView);
             case ElementType.TAB_CONTEXT:
                 return addTabContext(parentView, node);
             case ElementType.TAB_PANEL:
@@ -78,15 +80,6 @@ class ElementBuilder {
         final rows:Array<Dynamic> = modalView.findChildren("Row");
         final rowBody:GuiView = rows[1];
         return rowBody;
-    }
-
-    public static function addScene(parentView:GuiView, node:Access):GuiView {
-        var scene:Scene = new Scene(node.att.name);
-        setMaxSize(parentView.getModel(), scene);
-        scene.setBGColor(Color.LIGHT);
-        var sceneView:SceneView = new SceneView(scene);
-        parentView.add(ElementType.SCENE, sceneView);
-        return sceneView;
     }
 
     public static function addText(parentView:GuiView, node:Access):GuiView {

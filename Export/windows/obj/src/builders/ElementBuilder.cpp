@@ -6,8 +6,14 @@
 #ifndef INCLUDED__Xml_XmlType_Impl_
 #include <_Xml/XmlType_Impl_.h>
 #endif
+#ifndef INCLUDED_builders_BaseBuilder
+#include <builders/BaseBuilder.h>
+#endif
 #ifndef INCLUDED_builders_ElementBuilder
 #include <builders/ElementBuilder.h>
+#endif
+#ifndef INCLUDED_builders_SceneBuilder
+#include <builders/SceneBuilder.h>
 #endif
 #ifndef INCLUDED_controllers_BaseController
 #include <controllers/BaseController.h>
@@ -59,9 +65,6 @@
 #endif
 #ifndef INCLUDED_elements_row_RowView
 #include <elements/row/RowView.h>
-#endif
-#ifndef INCLUDED_elements_scene_Scene
-#include <elements/scene/Scene.h>
 #endif
 #ifndef INCLUDED_elements_scene_SceneView
 #include <elements/scene/SceneView.h>
@@ -158,21 +161,20 @@
 #endif
 
 HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_40_build,"builders.ElementBuilder","build",0x4aafb895,"builders.ElementBuilder.build","builders/ElementBuilder.hx",40,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_73_addModal,"builders.ElementBuilder","addModal",0x80ad8345,"builders.ElementBuilder.addModal","builders/ElementBuilder.hx",73,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_83_addScene,"builders.ElementBuilder","addScene",0xed273c64,"builders.ElementBuilder.addScene","builders/ElementBuilder.hx",83,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_92_addText,"builders.ElementBuilder","addText",0x39fb5495,"builders.ElementBuilder.addText","builders/ElementBuilder.hx",92,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_100_addImage,"builders.ElementBuilder","addImage",0x31be8273,"builders.ElementBuilder.addImage","builders/ElementBuilder.hx",100,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_108_addButton,"builders.ElementBuilder","addButton",0x3041b3da,"builders.ElementBuilder.addButton","builders/ElementBuilder.hx",108,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_117_addImgButton,"builders.ElementBuilder","addImgButton",0xe8f7156d,"builders.ElementBuilder.addImgButton","builders/ElementBuilder.hx",117,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_124_addTabContext,"builders.ElementBuilder","addTabContext",0x8023ee02,"builders.ElementBuilder.addTabContext","builders/ElementBuilder.hx",124,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_135_addTabList,"builders.ElementBuilder","addTabList",0x7eef4a6b,"builders.ElementBuilder.addTabList","builders/ElementBuilder.hx",135,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_148_addTabPanel,"builders.ElementBuilder","addTabPanel",0xdabe9857,"builders.ElementBuilder.addTabPanel","builders/ElementBuilder.hx",148,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_160_addTab,"builders.ElementBuilder","addTab",0xdb86476d,"builders.ElementBuilder.addTab","builders/ElementBuilder.hx",160,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_174_addRow,"builders.ElementBuilder","addRow",0xdb84cf32,"builders.ElementBuilder.addRow","builders/ElementBuilder.hx",174,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_184_addColumn,"builders.ElementBuilder","addColumn",0x1ceca0be,"builders.ElementBuilder.addColumn","builders/ElementBuilder.hx",184,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_190_addGrid,"builders.ElementBuilder","addGrid",0x316d5eae,"builders.ElementBuilder.addGrid","builders/ElementBuilder.hx",190,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_197_setMaxSize,"builders.ElementBuilder","setMaxSize",0xf69f4b3c,"builders.ElementBuilder.setMaxSize","builders/ElementBuilder.hx",197,0xab341628)
-HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_202_getElementCount,"builders.ElementBuilder","getElementCount",0x165fb650,"builders.ElementBuilder.getElementCount","builders/ElementBuilder.hx",202,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_75_addModal,"builders.ElementBuilder","addModal",0x80ad8345,"builders.ElementBuilder.addModal","builders/ElementBuilder.hx",75,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_85_addText,"builders.ElementBuilder","addText",0x39fb5495,"builders.ElementBuilder.addText","builders/ElementBuilder.hx",85,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_93_addImage,"builders.ElementBuilder","addImage",0x31be8273,"builders.ElementBuilder.addImage","builders/ElementBuilder.hx",93,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_101_addButton,"builders.ElementBuilder","addButton",0x3041b3da,"builders.ElementBuilder.addButton","builders/ElementBuilder.hx",101,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_110_addImgButton,"builders.ElementBuilder","addImgButton",0xe8f7156d,"builders.ElementBuilder.addImgButton","builders/ElementBuilder.hx",110,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_117_addTabContext,"builders.ElementBuilder","addTabContext",0x8023ee02,"builders.ElementBuilder.addTabContext","builders/ElementBuilder.hx",117,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_128_addTabList,"builders.ElementBuilder","addTabList",0x7eef4a6b,"builders.ElementBuilder.addTabList","builders/ElementBuilder.hx",128,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_141_addTabPanel,"builders.ElementBuilder","addTabPanel",0xdabe9857,"builders.ElementBuilder.addTabPanel","builders/ElementBuilder.hx",141,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_153_addTab,"builders.ElementBuilder","addTab",0xdb86476d,"builders.ElementBuilder.addTab","builders/ElementBuilder.hx",153,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_167_addRow,"builders.ElementBuilder","addRow",0xdb84cf32,"builders.ElementBuilder.addRow","builders/ElementBuilder.hx",167,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_177_addColumn,"builders.ElementBuilder","addColumn",0x1ceca0be,"builders.ElementBuilder.addColumn","builders/ElementBuilder.hx",177,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_183_addGrid,"builders.ElementBuilder","addGrid",0x316d5eae,"builders.ElementBuilder.addGrid","builders/ElementBuilder.hx",183,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_190_setMaxSize,"builders.ElementBuilder","setMaxSize",0xf69f4b3c,"builders.ElementBuilder.setMaxSize","builders/ElementBuilder.hx",190,0xab341628)
+HX_LOCAL_STACK_FRAME(_hx_pos_992a27da9529f3a9_195_getElementCount,"builders.ElementBuilder","getElementCount",0x165fb650,"builders.ElementBuilder.getElementCount","builders/ElementBuilder.hx",195,0xab341628)
 namespace builders{
 
 void ElementBuilder_obj::__construct() { }
@@ -207,290 +209,277 @@ HXDLIN(  41)				_g = node->nodeName;
             			}
 HXDLIN(  41)			::String _hx_switch_0 = _g;
             			if (  (_hx_switch_0==::elements::ElementType_obj::BUTTON) ){
-HXLINE(  65)				return ::builders::ElementBuilder_obj::addButton(parentView,node);
-HXDLIN(  65)				goto _hx_goto_0;
+HXLINE(  67)				return ::builders::ElementBuilder_obj::addButton(parentView,node);
+HXDLIN(  67)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::COLUMN) ){
-HXLINE(  61)				return ::builders::ElementBuilder_obj::addColumn(parentView,node);
-HXDLIN(  61)				goto _hx_goto_0;
-            			}
-            			if (  (_hx_switch_0==::elements::ElementType_obj::GRID) ){
-HXLINE(  63)				return ::builders::ElementBuilder_obj::addGrid(parentView,node);
+HXLINE(  63)				return ::builders::ElementBuilder_obj::addColumn(parentView,node);
 HXDLIN(  63)				goto _hx_goto_0;
             			}
+            			if (  (_hx_switch_0==::elements::ElementType_obj::GRID) ){
+HXLINE(  65)				return ::builders::ElementBuilder_obj::addGrid(parentView,node);
+HXDLIN(  65)				goto _hx_goto_0;
+            			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::IMAGE) ){
-HXLINE(  57)				return ::builders::ElementBuilder_obj::addImage(parentView,node);
-HXDLIN(  57)				goto _hx_goto_0;
+HXLINE(  59)				return ::builders::ElementBuilder_obj::addImage(parentView,node);
+HXDLIN(  59)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::IMG_BUTTON) ){
-HXLINE(  67)				return ::builders::ElementBuilder_obj::addImgButton(parentView,node);
-HXDLIN(  67)				goto _hx_goto_0;
+HXLINE(  69)				return ::builders::ElementBuilder_obj::addImgButton(parentView,node);
+HXDLIN(  69)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::MODAL) ){
 HXLINE(  43)				return ::builders::ElementBuilder_obj::addModal(parentView,node);
 HXDLIN(  43)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::ROW) ){
-HXLINE(  59)				return ::builders::ElementBuilder_obj::addRow(parentView,node);
-HXDLIN(  59)				goto _hx_goto_0;
+HXLINE(  61)				return ::builders::ElementBuilder_obj::addRow(parentView,node);
+HXDLIN(  61)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::SCENE) ){
-HXLINE(  45)				return ::builders::ElementBuilder_obj::addScene(parentView,node);
+HXLINE(  45)				return ::builders::SceneBuilder_obj::build(node)->withBackground(::shared::Color_obj::LIGHT)->apply(parentView);
 HXDLIN(  45)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::TAB) ){
-HXLINE(  53)				return ::builders::ElementBuilder_obj::addTab(parentView,node);
-HXDLIN(  53)				goto _hx_goto_0;
+HXLINE(  55)				return ::builders::ElementBuilder_obj::addTab(parentView,node);
+HXDLIN(  55)				goto _hx_goto_0;
             			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::TAB_CONTEXT) ){
-HXLINE(  47)				return ::builders::ElementBuilder_obj::addTabContext(parentView,node);
-HXDLIN(  47)				goto _hx_goto_0;
-            			}
-            			if (  (_hx_switch_0==::elements::ElementType_obj::TAB_LIST) ){
-HXLINE(  51)				return ::builders::ElementBuilder_obj::addTabList(parentView,node);
-HXDLIN(  51)				goto _hx_goto_0;
-            			}
-            			if (  (_hx_switch_0==::elements::ElementType_obj::TAB_PANEL) ){
-HXLINE(  49)				return ::builders::ElementBuilder_obj::addTabPanel(parentView,node);
+HXLINE(  49)				return ::builders::ElementBuilder_obj::addTabContext(parentView,node);
 HXDLIN(  49)				goto _hx_goto_0;
             			}
+            			if (  (_hx_switch_0==::elements::ElementType_obj::TAB_LIST) ){
+HXLINE(  53)				return ::builders::ElementBuilder_obj::addTabList(parentView,node);
+HXDLIN(  53)				goto _hx_goto_0;
+            			}
+            			if (  (_hx_switch_0==::elements::ElementType_obj::TAB_PANEL) ){
+HXLINE(  51)				return ::builders::ElementBuilder_obj::addTabPanel(parentView,node);
+HXDLIN(  51)				goto _hx_goto_0;
+            			}
             			if (  (_hx_switch_0==::elements::ElementType_obj::TEXT) ){
-HXLINE(  55)				return ::builders::ElementBuilder_obj::addText(parentView,node);
-HXDLIN(  55)				goto _hx_goto_0;
+HXLINE(  57)				return ::builders::ElementBuilder_obj::addText(parentView,node);
+HXDLIN(  57)				goto _hx_goto_0;
             			}
             			_hx_goto_0:;
             		}
-HXLINE(  70)		return null();
+HXLINE(  72)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,build,return )
 
  ::views::GuiView ElementBuilder_obj::addModal( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_73_addModal)
-HXLINE(  74)		 ::elements::modal::Modal modal =  ::elements::modal::Modal_obj::__alloc( HX_CTX );
-HXLINE(  75)		 ::elements::modal::ModalView modalView =  ::elements::modal::ModalView_obj::__alloc( HX_CTX ,modal,null());
-HXLINE(  76)		parentView->add(::elements::ElementType_obj::MODAL,modalView);
-HXLINE(  78)		::cpp::VirtualArray rows = modalView->findChildren(HX_("Row",fa,99,3e,00));
-HXLINE(  79)		 ::views::GuiView rowBody = ( ( ::views::GuiView)(rows->__get(1)) );
-HXLINE(  80)		return rowBody;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_75_addModal)
+HXLINE(  76)		 ::elements::modal::Modal modal =  ::elements::modal::Modal_obj::__alloc( HX_CTX );
+HXLINE(  77)		 ::elements::modal::ModalView modalView =  ::elements::modal::ModalView_obj::__alloc( HX_CTX ,modal,null());
+HXLINE(  78)		parentView->add(::elements::ElementType_obj::MODAL,modalView);
+HXLINE(  80)		::cpp::VirtualArray rows = modalView->findChildren(HX_("Row",fa,99,3e,00));
+HXLINE(  81)		 ::views::GuiView rowBody = ( ( ::views::GuiView)(rows->__get(1)) );
+HXLINE(  82)		return rowBody;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addModal,return )
 
- ::views::GuiView ElementBuilder_obj::addScene( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_83_addScene)
-HXLINE(  84)		 ::elements::scene::Scene scene =  ::elements::scene::Scene_obj::__alloc( HX_CTX ,::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("name",4b,72,ff,48)));
-HXLINE(  85)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),scene);
-HXLINE(  86)		scene->setBGColor(::shared::Color_obj::LIGHT);
-HXLINE(  87)		 ::elements::scene::SceneView sceneView =  ::elements::scene::SceneView_obj::__alloc( HX_CTX ,scene,null());
-HXLINE(  88)		parentView->add(::elements::ElementType_obj::SCENE,sceneView);
-HXLINE(  89)		return sceneView;
-            	}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addScene,return )
-
  ::views::GuiView ElementBuilder_obj::addText( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_92_addText)
-HXLINE(  93)		 ::elements::text::Text textElement =  ::elements::text::Text_obj::__alloc( HX_CTX );
-HXLINE(  94)		textElement->set_value(::haxe::xml::_Access::Access_Impl__obj::get_innerData(node));
-HXLINE(  95)		 ::elements::text::TextView textView =  ::elements::text::TextView_obj::__alloc( HX_CTX ,textElement);
-HXLINE(  96)		parentView->add(::elements::ElementType_obj::TEXT,textView);
-HXLINE(  97)		return textView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_85_addText)
+HXLINE(  86)		 ::elements::text::Text textElement =  ::elements::text::Text_obj::__alloc( HX_CTX );
+HXLINE(  87)		textElement->set_value(::haxe::xml::_Access::Access_Impl__obj::get_innerData(node));
+HXLINE(  88)		 ::elements::text::TextView textView =  ::elements::text::TextView_obj::__alloc( HX_CTX ,textElement);
+HXLINE(  89)		parentView->add(::elements::ElementType_obj::TEXT,textView);
+HXLINE(  90)		return textView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addText,return )
 
  ::views::GuiView ElementBuilder_obj::addImage( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_100_addImage)
-HXLINE( 101)		 ::elements::image::Image img =  ::elements::image::Image_obj::__alloc( HX_CTX );
-HXLINE( 102)		img->set_src(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("src",e4,a6,57,00)));
-HXLINE( 103)		 ::elements::image::ImageView imgView =  ::elements::image::ImageView_obj::__alloc( HX_CTX ,img);
-HXLINE( 104)		parentView->add(::elements::ElementType_obj::IMAGE,imgView);
-HXLINE( 105)		return imgView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_93_addImage)
+HXLINE(  94)		 ::elements::image::Image img =  ::elements::image::Image_obj::__alloc( HX_CTX );
+HXLINE(  95)		img->set_src(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("src",e4,a6,57,00)));
+HXLINE(  96)		 ::elements::image::ImageView imgView =  ::elements::image::ImageView_obj::__alloc( HX_CTX ,img);
+HXLINE(  97)		parentView->add(::elements::ElementType_obj::IMAGE,imgView);
+HXLINE(  98)		return imgView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addImage,return )
 
  ::views::GuiView ElementBuilder_obj::addButton( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_108_addButton)
-HXLINE( 109)		 ::elements::button::Button button =  ::elements::button::Button_obj::__alloc( HX_CTX );
-HXLINE( 110)		::String title;
-HXDLIN( 110)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(node,HX_("title",98,15,3b,10))) {
-HXLINE( 110)			title = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("title",98,15,3b,10));
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_101_addButton)
+HXLINE( 102)		 ::elements::button::Button button =  ::elements::button::Button_obj::__alloc( HX_CTX );
+HXLINE( 103)		::String title;
+HXDLIN( 103)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(node,HX_("title",98,15,3b,10))) {
+HXLINE( 103)			title = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("title",98,15,3b,10));
             		}
             		else {
-HXLINE( 110)			title = HX_("",00,00,00,00);
+HXLINE( 103)			title = HX_("",00,00,00,00);
             		}
-HXLINE( 111)		button->set_title(title);
-HXLINE( 112)		 ::elements::button::ButtonView buttonView =  ::elements::button::ButtonView_obj::__alloc( HX_CTX ,button);
-HXLINE( 113)		parentView->add(::elements::ElementType_obj::BUTTON,buttonView);
-HXLINE( 114)		return buttonView;
+HXLINE( 104)		button->set_title(title);
+HXLINE( 105)		 ::elements::button::ButtonView buttonView =  ::elements::button::ButtonView_obj::__alloc( HX_CTX ,button);
+HXLINE( 106)		parentView->add(::elements::ElementType_obj::BUTTON,buttonView);
+HXLINE( 107)		return buttonView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addButton,return )
 
  ::views::GuiView ElementBuilder_obj::addImgButton( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_117_addImgButton)
-HXLINE( 118)		 ::elements::img_button::ImgButton imgButton =  ::elements::img_button::ImgButton_obj::__alloc( HX_CTX );
-HXLINE( 119)		 ::elements::img_button::ImgButtonView imgButtonView =  ::elements::img_button::ImgButtonView_obj::__alloc( HX_CTX ,imgButton,node);
-HXLINE( 120)		parentView->add(::elements::ElementType_obj::IMG_BUTTON,imgButtonView);
-HXLINE( 121)		return imgButtonView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_110_addImgButton)
+HXLINE( 111)		 ::elements::img_button::ImgButton imgButton =  ::elements::img_button::ImgButton_obj::__alloc( HX_CTX );
+HXLINE( 112)		 ::elements::img_button::ImgButtonView imgButtonView =  ::elements::img_button::ImgButtonView_obj::__alloc( HX_CTX ,imgButton,node);
+HXLINE( 113)		parentView->add(::elements::ElementType_obj::IMG_BUTTON,imgButtonView);
+HXLINE( 114)		return imgButtonView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addImgButton,return )
 
  ::views::GuiView ElementBuilder_obj::addTabContext( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_124_addTabContext)
-HXLINE( 125)		 ::elements::tabs::context::TabContext tabContext =  ::elements::tabs::context::TabContext_obj::__alloc( HX_CTX );
-HXLINE( 126)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tabContext);
-HXLINE( 127)		tabContext->set_value(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("value",71,7f,b8,31)));
-HXLINE( 128)		tabContext->setSize(HX_("100%",94,0a,88,20),HX_("100%",94,0a,88,20));
-HXLINE( 129)		tabContext->setBGColor(::shared::Color_obj::BLACK);
-HXLINE( 130)		 ::elements::tabs::context::TabContextView tabContextView =  ::elements::tabs::context::TabContextView_obj::__alloc( HX_CTX ,tabContext);
-HXLINE( 131)		parentView->add(::elements::ElementType_obj::TAB_CONTEXT,tabContextView);
-HXLINE( 132)		return tabContextView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_117_addTabContext)
+HXLINE( 118)		 ::elements::tabs::context::TabContext tabContext =  ::elements::tabs::context::TabContext_obj::__alloc( HX_CTX );
+HXLINE( 119)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tabContext);
+HXLINE( 120)		tabContext->set_value(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("value",71,7f,b8,31)));
+HXLINE( 121)		tabContext->setSize(HX_("100%",94,0a,88,20),HX_("100%",94,0a,88,20));
+HXLINE( 122)		tabContext->setBGColor(::shared::Color_obj::BLACK);
+HXLINE( 123)		 ::elements::tabs::context::TabContextView tabContextView =  ::elements::tabs::context::TabContextView_obj::__alloc( HX_CTX ,tabContext);
+HXLINE( 124)		parentView->add(::elements::ElementType_obj::TAB_CONTEXT,tabContextView);
+HXLINE( 125)		return tabContextView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addTabContext,return )
 
  ::views::GuiView ElementBuilder_obj::addTabList( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_135_addTabList)
-HXLINE( 136)		 ::elements::tabs::TabList tabList =  ::elements::tabs::TabList_obj::__alloc( HX_CTX );
-HXLINE( 138)		tabList->set_count(::builders::ElementBuilder_obj::getElementCount(node,HX_("Tab",35,12,40,00)));
-HXLINE( 139)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tabList);
-HXLINE( 140)		tabList->setSize(HX_("100%",94,0a,88,20),HX_("10%",66,58,25,00));
-HXLINE( 141)		tabList->setBGColor(::shared::Color_obj::LIGHT);
-HXLINE( 142)		 ::elements::tabs::TabListController tabListController =  ::elements::tabs::TabListController_obj::__alloc( HX_CTX ,tabList);
-HXLINE( 143)		 ::elements::tabs::TabListView tabListView =  ::elements::tabs::TabListView_obj::__alloc( HX_CTX ,tabList,tabListController);
-HXLINE( 144)		parentView->add(::elements::ElementType_obj::TAB_LIST,tabListView);
-HXLINE( 145)		return tabListView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_128_addTabList)
+HXLINE( 129)		 ::elements::tabs::TabList tabList =  ::elements::tabs::TabList_obj::__alloc( HX_CTX );
+HXLINE( 131)		tabList->set_count(::builders::ElementBuilder_obj::getElementCount(node,HX_("Tab",35,12,40,00)));
+HXLINE( 132)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tabList);
+HXLINE( 133)		tabList->setSize(HX_("100%",94,0a,88,20),HX_("10%",66,58,25,00));
+HXLINE( 134)		tabList->setBGColor(::shared::Color_obj::LIGHT);
+HXLINE( 135)		 ::elements::tabs::TabListController tabListController =  ::elements::tabs::TabListController_obj::__alloc( HX_CTX ,tabList);
+HXLINE( 136)		 ::elements::tabs::TabListView tabListView =  ::elements::tabs::TabListView_obj::__alloc( HX_CTX ,tabList,tabListController);
+HXLINE( 137)		parentView->add(::elements::ElementType_obj::TAB_LIST,tabListView);
+HXLINE( 138)		return tabListView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addTabList,return )
 
  ::views::GuiView ElementBuilder_obj::addTabPanel( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_148_addTabPanel)
-HXLINE( 149)		 ::elements::tabs::panel::TabPanel tabPanel =  ::elements::tabs::panel::TabPanel_obj::__alloc( HX_CTX );
-HXLINE( 150)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tabPanel);
-HXLINE( 151)		tabPanel->set_value(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("value",71,7f,b8,31)));
-HXLINE( 152)		tabPanel->setPosition(0,HX_("10%",66,58,25,00));
-HXLINE( 153)		tabPanel->setSize(HX_("100%",94,0a,88,20),HX_("90%",6e,6a,2b,00));
-HXLINE( 154)		tabPanel->setBGColor(::shared::Color_obj::LIGHT);
-HXLINE( 155)		 ::elements::tabs::panel::TabPanelView tabPanelView =  ::elements::tabs::panel::TabPanelView_obj::__alloc( HX_CTX ,tabPanel);
-HXLINE( 156)		parentView->add(::elements::ElementType_obj::TAB_PANEL,tabPanelView);
-HXLINE( 157)		return tabPanelView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_141_addTabPanel)
+HXLINE( 142)		 ::elements::tabs::panel::TabPanel tabPanel =  ::elements::tabs::panel::TabPanel_obj::__alloc( HX_CTX );
+HXLINE( 143)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tabPanel);
+HXLINE( 144)		tabPanel->set_value(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("value",71,7f,b8,31)));
+HXLINE( 145)		tabPanel->setPosition(0,HX_("10%",66,58,25,00));
+HXLINE( 146)		tabPanel->setSize(HX_("100%",94,0a,88,20),HX_("90%",6e,6a,2b,00));
+HXLINE( 147)		tabPanel->setBGColor(::shared::Color_obj::LIGHT);
+HXLINE( 148)		 ::elements::tabs::panel::TabPanelView tabPanelView =  ::elements::tabs::panel::TabPanelView_obj::__alloc( HX_CTX ,tabPanel);
+HXLINE( 149)		parentView->add(::elements::ElementType_obj::TAB_PANEL,tabPanelView);
+HXLINE( 150)		return tabPanelView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addTabPanel,return )
 
  ::views::GuiView ElementBuilder_obj::addTab( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_160_addTab)
-HXLINE( 161)		 ::elements::tabs::TabList tabList = ::hx::TCast<  ::elements::tabs::TabList >::cast(parentView->getModel());
-HXLINE( 162)		Float width = (( (Float)(100) ) / ( (Float)(tabList->get_count()) ));
-HXLINE( 163)		int index = parentView->getChildrenLength(::elements::ElementType_obj::TAB);
-HXLINE( 164)		 ::elements::tabs::tab::Tab tab =  ::elements::tabs::tab::Tab_obj::__alloc( HX_CTX );
-HXLINE( 165)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tab);
-HXLINE( 166)		tab->set_value(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("value",71,7f,b8,31)));
-HXLINE( 167)		tab->setSize(((HX_("",00,00,00,00) + width) + HX_("%",25,00,00,00)),HX_("100%",94,0a,88,20));
-HXLINE( 168)		tab->setPosition(((HX_("",00,00,00,00) + (( (Float)(index) ) * width)) + HX_("%",25,00,00,00)),tab->getPosition()->get_y());
-HXLINE( 169)		 ::elements::tabs::tab::TabView tabView =  ::elements::tabs::tab::TabView_obj::__alloc( HX_CTX ,tab);
-HXLINE( 170)		parentView->add(::elements::ElementType_obj::TAB,tabView);
-HXLINE( 171)		return tabView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_153_addTab)
+HXLINE( 154)		 ::elements::tabs::TabList tabList = ::hx::TCast<  ::elements::tabs::TabList >::cast(parentView->getModel());
+HXLINE( 155)		Float width = (( (Float)(100) ) / ( (Float)(tabList->get_count()) ));
+HXLINE( 156)		int index = parentView->getChildrenLength(::elements::ElementType_obj::TAB);
+HXLINE( 157)		 ::elements::tabs::tab::Tab tab =  ::elements::tabs::tab::Tab_obj::__alloc( HX_CTX );
+HXLINE( 158)		::builders::ElementBuilder_obj::setMaxSize(parentView->getModel(),tab);
+HXLINE( 159)		tab->set_value(::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("value",71,7f,b8,31)));
+HXLINE( 160)		tab->setSize(((HX_("",00,00,00,00) + width) + HX_("%",25,00,00,00)),HX_("100%",94,0a,88,20));
+HXLINE( 161)		tab->setPosition(((HX_("",00,00,00,00) + (( (Float)(index) ) * width)) + HX_("%",25,00,00,00)),tab->getPosition()->get_y());
+HXLINE( 162)		 ::elements::tabs::tab::TabView tabView =  ::elements::tabs::tab::TabView_obj::__alloc( HX_CTX ,tab);
+HXLINE( 163)		parentView->add(::elements::ElementType_obj::TAB,tabView);
+HXLINE( 164)		return tabView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addTab,return )
 
  ::views::GuiView ElementBuilder_obj::addRow( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_174_addRow)
-HXLINE( 175)		 ::elements::row::Row row =  ::elements::row::Row_obj::__alloc( HX_CTX );
-HXLINE( 176)		 ::Dynamic width;
-HXDLIN( 176)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(node,HX_("width",06,b6,62,ca))) {
-HXLINE( 176)			width = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("width",06,b6,62,ca));
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_167_addRow)
+HXLINE( 168)		 ::elements::row::Row row =  ::elements::row::Row_obj::__alloc( HX_CTX );
+HXLINE( 169)		 ::Dynamic width;
+HXDLIN( 169)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(node,HX_("width",06,b6,62,ca))) {
+HXLINE( 169)			width = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("width",06,b6,62,ca));
             		}
             		else {
-HXLINE( 176)			width = HX_("0",30,00,00,00);
+HXLINE( 169)			width = HX_("0",30,00,00,00);
             		}
-HXLINE( 177)		 ::Dynamic height;
-HXDLIN( 177)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(node,HX_("height",e7,07,4c,02))) {
-HXLINE( 177)			height = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("height",e7,07,4c,02));
+HXLINE( 170)		 ::Dynamic height;
+HXDLIN( 170)		if (::haxe::xml::_Access::HasAttribAccess_Impl__obj::resolve(node,HX_("height",e7,07,4c,02))) {
+HXLINE( 170)			height = ::haxe::xml::_Access::AttribAccess_Impl__obj::resolve(node,HX_("height",e7,07,4c,02));
             		}
             		else {
-HXLINE( 177)			height = HX_("0",30,00,00,00);
+HXLINE( 170)			height = HX_("0",30,00,00,00);
             		}
-HXLINE( 178)		row->setSize(width,height);
-HXLINE( 179)		 ::elements::row::RowView rowView =  ::elements::row::RowView_obj::__alloc( HX_CTX ,row,null());
-HXLINE( 180)		parentView->add(::elements::ElementType_obj::ROW,rowView);
-HXLINE( 181)		return rowView;
+HXLINE( 171)		row->setSize(width,height);
+HXLINE( 172)		 ::elements::row::RowView rowView =  ::elements::row::RowView_obj::__alloc( HX_CTX ,row,null());
+HXLINE( 173)		parentView->add(::elements::ElementType_obj::ROW,rowView);
+HXLINE( 174)		return rowView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addRow,return )
 
  ::views::GuiView ElementBuilder_obj::addColumn( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_184_addColumn)
-HXLINE( 185)		 ::elements::column::ColumnView columnView =  ::elements::column::ColumnView_obj::__alloc( HX_CTX , ::elements::column::Column_obj::__alloc( HX_CTX ));
-HXLINE( 186)		parentView->add(::elements::ElementType_obj::COLUMN,columnView);
-HXLINE( 187)		return columnView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_177_addColumn)
+HXLINE( 178)		 ::elements::column::ColumnView columnView =  ::elements::column::ColumnView_obj::__alloc( HX_CTX , ::elements::column::Column_obj::__alloc( HX_CTX ));
+HXLINE( 179)		parentView->add(::elements::ElementType_obj::COLUMN,columnView);
+HXLINE( 180)		return columnView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addColumn,return )
 
  ::views::GuiView ElementBuilder_obj::addGrid( ::views::GuiView parentView, ::Xml node){
-            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_190_addGrid)
-HXLINE( 191)		 ::elements::grid::Grid grid =  ::elements::grid::Grid_obj::__alloc( HX_CTX );
-HXLINE( 192)		 ::elements::grid::GridView gridView =  ::elements::grid::GridView_obj::__alloc( HX_CTX ,grid,node);
-HXLINE( 193)		parentView->add(::elements::ElementType_obj::GRID,gridView);
-HXLINE( 194)		return gridView;
+            	HX_GC_STACKFRAME(&_hx_pos_992a27da9529f3a9_183_addGrid)
+HXLINE( 184)		 ::elements::grid::Grid grid =  ::elements::grid::Grid_obj::__alloc( HX_CTX );
+HXLINE( 185)		 ::elements::grid::GridView gridView =  ::elements::grid::GridView_obj::__alloc( HX_CTX ,grid,node);
+HXLINE( 186)		parentView->add(::elements::ElementType_obj::GRID,gridView);
+HXLINE( 187)		return gridView;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,addGrid,return )
 
 void ElementBuilder_obj::setMaxSize(::Dynamic parentView,::Dynamic currentView){
-            	HX_STACKFRAME(&_hx_pos_992a27da9529f3a9_197_setMaxSize)
-HXLINE( 198)		 ::shared::size::Size parentSize = ::models::IModel_obj::getSize(parentView);
-HXLINE( 199)		Float _hx_tmp = parentSize->get_width();
-HXDLIN( 199)		::models::IModel_obj::setMaxSize(currentView,_hx_tmp,parentSize->get_height());
+            	HX_STACKFRAME(&_hx_pos_992a27da9529f3a9_190_setMaxSize)
+HXLINE( 191)		 ::shared::size::Size parentSize = ::models::IModel_obj::getSize(parentView);
+HXLINE( 192)		Float _hx_tmp = parentSize->get_width();
+HXDLIN( 192)		::models::IModel_obj::setMaxSize(currentView,_hx_tmp,parentSize->get_height());
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ElementBuilder_obj,setMaxSize,(void))
 
 int ElementBuilder_obj::getElementCount( ::Xml node,::String elementName){
-            	HX_STACKFRAME(&_hx_pos_992a27da9529f3a9_202_getElementCount)
-HXLINE( 203)		int count = 0;
-HXLINE( 204)		{
-HXLINE( 204)			 ::Dynamic element = node->elements();
-HXDLIN( 204)			while(( (bool)(element->__Field(HX_("hasNext",6d,a5,46,18),::hx::paccDynamic)()) )){
-HXLINE( 204)				 ::Xml element1 = ( ( ::Xml)(element->__Field(HX_("next",f3,84,02,49),::hx::paccDynamic)()) );
-HXLINE( 205)				::String _hx_tmp;
-HXDLIN( 205)				if ((element1->nodeType == ::Xml_obj::Document)) {
-HXLINE( 205)					_hx_tmp = HX_("Document",3b,ab,c4,74);
+            	HX_STACKFRAME(&_hx_pos_992a27da9529f3a9_195_getElementCount)
+HXLINE( 196)		int count = 0;
+HXLINE( 197)		{
+HXLINE( 197)			 ::Dynamic element = node->elements();
+HXDLIN( 197)			while(( (bool)(element->__Field(HX_("hasNext",6d,a5,46,18),::hx::paccDynamic)()) )){
+HXLINE( 197)				 ::Xml element1 = ( ( ::Xml)(element->__Field(HX_("next",f3,84,02,49),::hx::paccDynamic)()) );
+HXLINE( 198)				::String _hx_tmp;
+HXDLIN( 198)				if ((element1->nodeType == ::Xml_obj::Document)) {
+HXLINE( 198)					_hx_tmp = HX_("Document",3b,ab,c4,74);
             				}
             				else {
-HXLINE( 205)					if ((element1->nodeType != ::Xml_obj::Element)) {
-HXLINE( 205)						HX_STACK_DO_THROW(::haxe::Exception_obj::thrown((HX_("Bad node type, expected Element but found ",d8,90,8b,bb) + ::_Xml::XmlType_Impl__obj::toString(element1->nodeType))));
+HXLINE( 198)					if ((element1->nodeType != ::Xml_obj::Element)) {
+HXLINE( 198)						HX_STACK_DO_THROW(::haxe::Exception_obj::thrown((HX_("Bad node type, expected Element but found ",d8,90,8b,bb) + ::_Xml::XmlType_Impl__obj::toString(element1->nodeType))));
             					}
-HXDLIN( 205)					_hx_tmp = element1->nodeName;
+HXDLIN( 198)					_hx_tmp = element1->nodeName;
             				}
-HXDLIN( 205)				if ((_hx_tmp == elementName)) {
-HXLINE( 206)					count = (count + 1);
+HXDLIN( 198)				if ((_hx_tmp == elementName)) {
+HXLINE( 199)					count = (count + 1);
             				}
             			}
             		}
-HXLINE( 209)		return count;
+HXLINE( 202)		return count;
             	}
 
 
@@ -517,7 +506,6 @@ bool ElementBuilder_obj::__GetStatic(const ::String &inName, Dynamic &outValue, 
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"addModal") ) { outValue = addModal_dyn(); return true; }
-		if (HX_FIELD_EQ(inName,"addScene") ) { outValue = addScene_dyn(); return true; }
 		if (HX_FIELD_EQ(inName,"addImage") ) { outValue = addImage_dyn(); return true; }
 		break;
 	case 9:
@@ -553,7 +541,6 @@ static ::hx::StaticInfo *ElementBuilder_obj_sStaticStorageInfo = 0;
 static ::String ElementBuilder_obj_sStaticFields[] = {
 	HX_("build",2e,db,ea,ba),
 	HX_("addModal",4c,46,b5,85),
-	HX_("addScene",6b,ff,2e,f2),
 	HX_("addText",6e,0f,37,89),
 	HX_("addImage",7a,45,c6,36),
 	HX_("addButton",f3,96,04,92),

@@ -2193,8 +2193,14 @@
 #ifndef INCLUDED_controllers_IController
 #include <controllers/IController.h>
 #endif
+#ifndef INCLUDED_builders_SceneBuilder
+#include <builders/SceneBuilder.h>
+#endif
 #ifndef INCLUDED_builders_ElementBuilder
 #include <builders/ElementBuilder.h>
+#endif
+#ifndef INCLUDED_builders_BaseBuilder
+#include <builders/BaseBuilder.h>
 #endif
 #ifndef INCLUDED_builders_AppBuilder
 #include <builders/AppBuilder.h>
@@ -3036,7 +3042,9 @@ __files__boot();
 ::controllers::IMouseHandler_obj::__register();
 ::controllers::BaseController_obj::__register();
 ::controllers::IController_obj::__register();
+::builders::SceneBuilder_obj::__register();
 ::builders::ElementBuilder_obj::__register();
+::builders::BaseBuilder_obj::__register();
 ::builders::AppBuilder_obj::__register();
 ::_Xml::XmlType_Impl__obj::__register();
 ::Type_obj::__register();

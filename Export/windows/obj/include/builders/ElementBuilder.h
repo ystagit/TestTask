@@ -67,9 +67,6 @@ class HXCPP_CLASS_ATTRIBUTES ElementBuilder_obj : public ::hx::Object
 		static  ::views::GuiView addModal( ::views::GuiView parentView, ::Xml node);
 		static ::Dynamic addModal_dyn();
 
-		static  ::views::GuiView addScene( ::views::GuiView parentView, ::Xml node);
-		static ::Dynamic addScene_dyn();
-
 		static  ::views::GuiView addText( ::views::GuiView parentView, ::Xml node);
 		static ::Dynamic addText_dyn();
 
